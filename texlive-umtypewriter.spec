@@ -16,7 +16,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 The UMTypewriter font family is a monospaced font family that
@@ -25,20 +24,12 @@ Cyrillic alphabet fonts ("LH"), and the standard Computer
 Modern font family. It contains four OpenType fonts which are
 required for use of the xgreek package for XeLaTeX.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -48,7 +39,6 @@ required for use of the xgreek package for XeLaTeX.
 %{_texmfdistdir}/fonts/opentype/public/umtypewriter/UMTypewriter-Italic.otf
 %{_texmfdistdir}/fonts/opentype/public/umtypewriter/UMTypewriter-Oblique.otf
 %{_texmfdistdir}/fonts/opentype/public/umtypewriter/UMTypewriter-Regular.otf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,5 +49,3 @@ required for use of the xgreek package for XeLaTeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
