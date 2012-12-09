@@ -49,3 +49,16 @@ required for use of the xgreek package for XeLaTeX.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 001.002-2
++ Revision: 757281
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 001.002-1
++ Revision: 719844
+- texlive-umtypewriter
+- texlive-umtypewriter
+- texlive-umtypewriter
+
