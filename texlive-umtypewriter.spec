@@ -6,7 +6,7 @@
 # catalog-version 001.002
 Name:		texlive-umtypewriter
 Version:	001.002
-Release:	2
+Release:	3
 Summary:	Fonts to typeset with the xgreek package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/umtypewriter
