@@ -1,17 +1,11 @@
-# revision 18651
-# category Package
-# catalog-ctan /fonts/umtypewriter
-# catalog-date 2009-07-23 15:45:58 +0200
-# catalog-license ofl
-# catalog-version 001.002
 Name:		texlive-umtypewriter
-Version:	001.002
-Release:	11
+Version:	64443
+Release:	1
 Summary:	Fonts to typeset with the xgreek package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/umtypewriter
 License:	OFL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/umtypewriter.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/umtypewriter.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ Modern font family. It contains four OpenType fonts which are
 required for use of the xgreek package for XeLaTeX.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -42,23 +36,10 @@ required for use of the xgreek package for XeLaTeX.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0
+%autosetup -p1 -c
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 001.002-2
-+ Revision: 757281
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 001.002-1
-+ Revision: 719844
-- texlive-umtypewriter
-- texlive-umtypewriter
-- texlive-umtypewriter
-
