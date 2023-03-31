@@ -1,6 +1,6 @@
 Name:		texlive-umtypewriter
 Version:	64443
-Release:	1
+Release:	2
 Summary:	Fonts to typeset with the xgreek package
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/umtypewriter
