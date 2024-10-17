@@ -3,7 +3,7 @@ Version:	64443
 Release:	2
 Summary:	Fonts to typeset with the xgreek package
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/umtypewriter
+URL:		https://www.ctan.org/tex-archive/fonts/umtypewriter
 License:	OFL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/umtypewriter.r%{version}.tar.xz
 BuildArch:	noarch
